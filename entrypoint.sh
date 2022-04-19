@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-git config --global --add safe.directory $GITHUB_WORKSPACE
+git config --global --add safe.directory "$GITHUB_WORKSPACE" || exit 1
 cd "${GITHUB_WORKSPACE}" || exit
 
 if [ -z "${INPUT_TAG}" ]; then
